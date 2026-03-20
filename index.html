@@ -1,0 +1,88 @@
+
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JNTU Results</title>
+<style>
+    body { font-family: Verdana, Arial, sans-serif; background:#e6e6e6; margin:0; }
+    .topbar { background:#003366; color:white; padding:10px; text-align:center; font-size:20px; font-weight:bold; }
+    .subbar { background:#0055a5; color:white; padding:6px; text-align:center; font-size:14px; }
+    .container { width:70%; margin:30px auto; background:white; border:1px solid #ccc; padding:20px; }
+    .title { text-align:center; font-size:18px; font-weight:bold; margin-bottom:20px; }
+    table { width:100%; border-collapse:collapse; margin-top:15px; font-size:14px; }
+    th { background:#d9edf7; border:1px solid #999; padding:8px; }
+    td { border:1px solid #999; padding:8px; }
+    .login-box { text-align:center; margin-top:40px; }
+    input { padding:8px; width:250px; }
+    button { padding:8px 15px; background:#003366; color:white; border:none; cursor:pointer; }
+    .result-status { margin-top:20px; font-weight:bold; color:green; }
+    .footer { text-align:center; font-size:12px; margin-top:20px; color:#555; }
+</style>
+</head>
+<body><div class="topbar">Jawaharlal Nehru Technological University Results Portal</div>
+<div class="subbar">B.Tech Examination Results</div><!-- LOGIN --><div class="container" id="loginPage">
+    <div class="title">Enter Hall Ticket Number</div>
+    <div class="login-box">
+        <input type="text" id="rollInput" placeholder="Hall Ticket Number">
+        <br><br>
+        <button onclick="checkLogin()">Submit</button>
+        <p id="error" style="color:red;"></p>
+    </div>
+</div><!-- RESULT --><div class="container" id="resultPage" style="display:none;"><div class="title">Adarsh College of Engineering</div>
+
+<table>
+    <tr><th>Hall Ticket No</th><td>25HN1A0410</td></tr>
+    <tr><th>Name</th><td>Veeranki Dileep</td></tr>
+    <tr><th>Father's Name</th><td>Veeranki Rambabu</td></tr>
+    <tr><th>Mother's Name</th><td>Veeranki Venkateswaramma</td></tr>
+</table>
+
+<table>
+    <tr>
+        <th>Subject Code</th>
+        <th>Subject Name</th>
+        <th>Internal</th>
+        <th>External</th>
+        <th>Total</th>
+        <th>Credits</th>
+        <th>Grade</th>
+        <th>Grade Points</th>
+    </tr>
+    <tr><td>MAT101</td><td>Mathematics</td><td>22</td><td>60</td><td>82</td><td>3</td><td>B+</td><td>8</td></tr>
+    <tr><td>CSE102</td><td>Programming</td><td>26</td><td>64</td><td>90</td><td>3</td><td>A</td><td>9</td></tr>
+    <tr><td>PHY103</td><td>Physics</td><td>21</td><td>57</td><td>78</td><td>3</td><td>B+</td><td>8</td></tr>
+    <tr><td>ENG104</td><td>Engineering Graphics</td><td>20</td><td>55</td><td>75</td><td>2</td><td>B</td><td>7</td></tr>
+    <tr><td>EEE105</td><td>Electrical and Electronics Engineering</td><td>23</td><td>60</td><td>83</td><td>3</td><td>B+</td><td>8</td></tr>
+    <tr><td>CSEL106</td><td>Programming Lab</td><td>28</td><td>62</td><td>90</td><td>1.5</td><td>A</td><td>9</td></tr>
+    <tr><td>EEEL107</td><td>Electrical and Electronics Engineering Lab</td><td>27</td><td>60</td><td>87</td><td>1.5</td><td>A</td><td>9</td></tr>
+    <tr><td>EGL108</td><td>Engineering Graphics Lab</td><td>25</td><td>58</td><td>83</td><td>1.5</td><td>B+</td><td>8</td></tr>
+</table>
+
+<div class="result-status">Result: PASS</div>
+
+<div class="result-status">SGPA: 8.20</div>
+
+<br>
+<button onclick="logout()">Back</button>
+
+<div class="footer">Note: This is a simulated result page for demonstration</div>
+
+</div><script>
+function checkLogin() {
+    const roll = document.getElementById('rollInput').value.trim();
+    if (roll === "25HN1A0410") {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('resultPage').style.display = 'block';
+    } else {
+        document.getElementById('error').innerText = "Invalid Hall Ticket Number";
+    }
+}
+
+function logout() {
+    document.getElementById('loginPage').style.display = 'block';
+    document.getElementById('resultPage').style.display = 'none';
+    document.getElementById('rollInput').value = "";
+}
+</script></body>
+</html>
